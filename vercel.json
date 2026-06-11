@@ -1,0 +1,50 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.2"
+    },
+    "index.php": {
+      "runtime": "vercel-php@0.7.2"
+    }
+  },
+  "routes": [
+    { "src": "/api/anggota_view(.*)",        "dest": "/api/anggota_view.php$1" },
+    { "src": "/api/anggota_create(.*)",      "dest": "/api/anggota_create.php$1" },
+    { "src": "/api/anggota_update(.*)",      "dest": "/api/anggota_update.php$1" },
+    { "src": "/api/anggota_delete(.*)",      "dest": "/api/anggota_delete.php$1" },
+
+    { "src": "/api/buku_view(.*)",           "dest": "/api/buku_view.php$1" },
+    { "src": "/api/buku_create(.*)",         "dest": "/api/buku_create.php$1" },
+    { "src": "/api/buku_update(.*)",         "dest": "/api/buku_update.php$1" },
+    { "src": "/api/buku_delete(.*)",         "dest": "/api/buku_delete.php$1" },
+
+    { "src": "/api/kategori_view(.*)",       "dest": "/api/kategori_view.php$1" },
+    { "src": "/api/kategori_create(.*)",     "dest": "/api/kategori_create.php$1" },
+    { "src": "/api/kategori_update(.*)",     "dest": "/api/kategori_update.php$1" },
+    { "src": "/api/kategori_delete(.*)",     "dest": "/api/kategori_delete.php$1" },
+
+    { "src": "/api/peminjaman_view(.*)",     "dest": "/api/peminjaman_view.php$1" },
+    { "src": "/api/peminjaman_create(.*)",   "dest": "/api/peminjaman_create.php$1" },
+    { "src": "/api/peminjaman_update(.*)",   "dest": "/api/peminjaman_update.php$1" },
+    { "src": "/api/peminjaman_delete(.*)",   "dest": "/api/peminjaman_delete.php$1" },
+
+    { "src": "/api/file_digital_view(.*)",   "dest": "/api/file_digital_view.php$1" },
+    { "src": "/api/file_digital_create(.*)", "dest": "/api/file_digital_create.php$1" },
+    { "src": "/api/file_digital_update(.*)", "dest": "/api/file_digital_update.php$1" },
+    { "src": "/api/file_digital_delete(.*)", "dest": "/api/file_digital_delete.php$1" },
+
+    { "src": "/api/admin_view(.*)",          "dest": "/api/admin_view.php$1" },
+    { "src": "/api/admin_create(.*)",        "dest": "/api/admin_create.php$1" },
+    { "src": "/api/admin_update(.*)",        "dest": "/api/admin_update.php$1" },
+    { "src": "/api/admin_delete(.*)",        "dest": "/api/admin_delete.php$1" },
+
+    { "src": "/api/anggota(.*)",             "dest": "/api/anggota.php$1" },
+    { "src": "/api/buku(.*)",                "dest": "/api/buku.php$1" },
+    { "src": "/api/kategori(.*)",            "dest": "/api/kategori.php$1" },
+    { "src": "/api/peminjaman(.*)",          "dest": "/api/peminjaman.php$1" },
+    { "src": "/api/file_digital(.*)",        "dest": "/api/file_digital.php$1" },
+    { "src": "/api/admin(.*)",               "dest": "/api/admin.php$1" },
+
+    { "src": "/(.*)",                        "dest": "/index.php" }
+  ]
+}
