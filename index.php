@@ -34,6 +34,9 @@ switch ($route) {
     case 'file_digital':
         require __DIR__ . '/api/file_digital.php';
         break;
+    case 'admin':
+        require __DIR__ . '/api/admin.php';
+        break;
     default:
         response(200, 'success', 'Selamat datang di E-Library API — Kelompok 9', [
             'kelompok'  => 9,
@@ -53,6 +56,8 @@ switch ($route) {
                 'GET/PUT/DELETE'  => '/api/peminjaman?id={id}',
                 'GET/POST'        => '/api/file_digital',
                 'GET/PUT/DELETE'  => '/api/file_digital?id={id}',
+                'GET/POST'        => '/api/admin',
+                'GET/PUT/DELETE'  => '/api/admin?id={id}',
             ],
         ]);
 }

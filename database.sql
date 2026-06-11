@@ -107,3 +107,24 @@ INSERT INTO `file_digital` (`id_buku`, `format_file`, `ukuran_file`, `link_unduh
 INSERT INTO `peminjaman` (`id_anggota`, `id_buku`, `tanggal_pinjam`, `tanggal_kembali`, `status_peminjaman`) VALUES
   (1, 1, '2026-06-01', NULL,         'Dipinjam'),
   (2, 2, '2026-05-20', '2026-05-27', 'Kembali');
+
+-- ─────────────────────────────────────────────
+-- 6. TABEL ADMIN
+-- ─────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id_admin`     INT(11)      NOT NULL AUTO_INCREMENT,
+  `username`     VARCHAR(50)  NOT NULL UNIQUE,
+  `password`     VARCHAR(255) NOT NULL,
+  `nama_lengkap` VARCHAR(100) NOT NULL,
+  `email`        VARCHAR(100) NOT NULL UNIQUE,
+  `level`        ENUM('superadmin','admin','operator') NOT NULL DEFAULT 'admin',
+  `created_at`   TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Password default: Admin@1234 (di-hash dengan bcrypt)
+INSERT INTO `admin` (`username`, `password`, `nama_lengkap`, `email`, `level`) VALUES
+  ('superadmin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Super Administrator', 'superadmin@elibrary.com', 'superadmin'),
+  ('admin1',     '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Burhan Yusuf Arifin',  'burhan.admin@elibrary.com', 'admin'),
+  ('operator1',  '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Arjuna Dwi Refa S',    'arjuna.admin@elibrary.com', 'operator');
+
