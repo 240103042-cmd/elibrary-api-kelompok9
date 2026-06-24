@@ -99,3 +99,5 @@ if ($method === 'DELETE') {
 }
 
 response(405, 'error', 'Method tidak diizinkan.');
+
+// [Arjuna Dwi Refa S] Validasi field tambahan untuk kategori
