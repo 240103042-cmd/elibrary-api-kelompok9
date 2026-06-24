@@ -9,9 +9,16 @@ define('DB_HOST', getenv('DB_HOST') ?: 'sql209.infinityfree.com');
 define('DB_USER', getenv('DB_USER') ?: 'if0_41598099');
 define('DB_PASS', getenv('DB_PASS') ?: 'A3726b356');
 define('DB_NAME', getenv('DB_NAME') ?: 'if0_41598099_elibrary');
+define('DB_PORT', getenv('DB_PORT') ?: 3306);
 
 function getConnection(): mysqli {
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $conn = mysqli_init();
+    
+    // Untuk Aiven / Vercel SSL Requirement
+    $conn->ssl_set(NULL, NULL, NULL, NULL, NULL);
+    
+    // Gunakan real_connect untuk custom port dan SSL
+    @$conn->real_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT, NULL, MYSQLI_CLIENT_SSL);
 
     if ($conn->connect_error) {
         http_response_code(500);
