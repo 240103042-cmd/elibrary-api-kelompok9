@@ -1,7 +1,7 @@
 {
   "builds": [
-    { "src": "index.php",   "use": "vercel-php@0.7.2" },
-    { "src": "api/*.php",   "use": "vercel-php@0.7.2" }
+    { "src": "index.php",   "use": "vercel-php@0.6.2" },
+    { "src": "api/*.php",   "use": "vercel-php@0.6.2" }
   ],
   "routes": [
     { "src": "/api/anggota_view",          "dest": "/api/anggota_view.php" },
