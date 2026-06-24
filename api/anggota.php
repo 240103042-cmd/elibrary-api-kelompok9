@@ -121,3 +121,5 @@ if ($method === 'DELETE') {
 }
 
 response(405, 'error', 'Method tidak diizinkan.');
+
+// [Burhan Yusuf Arifin] Optimasi query pengambilan anggota

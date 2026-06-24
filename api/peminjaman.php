@@ -118,3 +118,5 @@ if ($method === 'DELETE') {
 }
 
 response(405, 'error', 'Method tidak diizinkan.');
+
+// [Burhan Yusuf Arifin] Handle error saat data peminjaman kosong
